@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Solicitud Licencia de Conducir</title>
+
+<style>
+    body {
+        background: #f2f2f2;
+        font-family: "Inter", Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .form-wrapper {
+        width: 100%;
+        max-width: 600px;
+        margin: 40px auto;
+        background: #ffffff;
+        padding: 50px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+    }
+
+    h1 {
+        font-size: 22px;
+        font-weight: 600;
+        text-align: left;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+    }
+
+    label {
+        font-size: 14px;
+        font-weight: 600;
+        display: block;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+        color: #222;
+    }
+
+    .input {
+        width: 100%;
+        padding: 14px;
+        font-size: 15px;
+        border-radius: 6px;
+        border: 1px solid #ddd;
+        margin-bottom: 22px;
+        outline: none;
+        transition: 0.2s;
+    }
+
+    .input:focus {
+        border-color: #00a884;
+        box-shadow: 0 0 0 2px rgba(0,168,132,0.15);
+    }
+
+    select.input {
+        background-color: #fff;
+    }
+
+    small {
+        font-size: 12px;
+        color: #444;
+        margin-top: -16px;
+        margin-bottom: 18px;
+        display: block;
+        line-height: 1.4;
+    }
+
+    .section-title {
+        font-size: 18px;
+        font-weight: 600;
+        margin-top: 20px;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+    }
+
+    .radio-group {
+        margin-bottom: 22px;
+    }
+
+    .radio-option {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 8px;
+        font-size: 15px;
+    }
+
+    .btn-submit {
+        background: #25d366;
+        color: white;
+        width: 100%;
+        padding: 16px;
+        font-size: 18px;
+        font-weight: 600;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        margin-top: 10px;
+        transition: 0.25s;
+    }
+
+    .btn-submit:hover {
+        background: #1ebe5d;
+    }
+
+    .footer-text {
+        font-size: 13px;
+        color: #333;
+        text-align: left;
+        margin-top: 20px;
+        line-height: 1.4;
+        border-left: 4px solid #25d366;
+        padding-left: 12px;
+    }
+
+</style>
+</head>
+
+<body>
+
+<div class="form-wrapper">
+    
+    <h1>SOLICITUD LICENCIA DE CONDUCIR</h1>
+
+    <!-- CAMPOS DEL FORMULARIO -->
+
+    <label>* NUM TELEFONO (WHATSAPP DESDE DONDE ESCRIBE)</label>
+    <input class="input" type="tel" id="telefono" maxlength="10">
+
+    <label>* TIPO DE LICENCIA</label>
+    <select class="input" id="tipo_licencia">
+        <option value="">Seleccionar…</option>
+        <option>CHOFER - C</option>
+        <option>AUTOMOVILISTA - A</option>
+        <option>MOTOCICLISTA - M</option>
+    </select>
+
+    <label>* VALIDA POR</label>
+    <select class="input" id="valida_por">
+        <option value="">Seleccionar…</option>
+        <option>3 AÑOS $650</option>
+        <option>5 AÑOS $700</option>
+    </select>
+
+    <label>* NOMBRE COMPLETO</label>
+    <input class="input" type="text" id="nombre">
+
+    <label>* CURP</label>
+    <input class="input" type="text" id="curp" maxlength="18">
+
+    <label>* CON BASE EN LOS LINEAMIENTOS… ¿ESTÁ DE ACUERDO?</label>
+    <select class="input" id="domicilio">
+        <option value="">Seleccionar…</option>
+        <option>SI</option>
+    </select>
+
+    <small>
+        Como la licencia se tramita en Guerrero, se pide que salga con un domicilio de aquí.  
+        En caso de no tener domicilio de Guerrero, la licencia saldrá con el domicilio del ayuntamiento donde se realiza el trámite.
+    </small>
+
+    <label>* ALERGIAS O RESTRICCIONES</label>
+    <input class="input" type="text" id="alergias">
+
+    <label>* TIPO DE SANGRE</label>
+    <select class="input" id="sangre">
+        <option value="">Seleccionar…</option>
+        <option>AB+</option><option>AB-</option>
+        <option>A+</option><option>A-</option>
+        <option>B+</option><option>B-</option>
+        <option>O+</option><option>O-</option>
+        <option>DESCONOCE</option>
+    </select>
+
+    <label>* CONTACTO EN CASO DE EMERGENCIA (NOMBRE)</label>
+    <input class="input" type="text" id="emergencia_nombre">
+
+    <label>* TELÉFONO DE EMERGENCIA</label>
+    <input class="input" type="tel" id="emergencia_tel" maxlength="10">
+
+    <div class="section-title">DATOS PARA ENVIO</div>
+
+    <label>* NOMBRE DESTINATARIO</label>
+    <input class="input" type="text" id="dest_nombre">
+
+    <label>* TELÉFONO DESTINATARIO</label>
+    <input class="input" type="tel" id="dest_tel" maxlength="10">
+
+    <label>* CALLE</label>
+    <input class="input" type="text" id="calle">
+
+    <label>* NUMERO EXT</label>
+    <input class="input" type="text" id="numero_ext">
+
+    <label>* COLONIA</label>
+    <input class="input" type="text" id="colonia">
+
+    <label>* CODIGO POSTAL</label>
+    <input class="input" type="text" id="cp" maxlength="5">
+
+    <label>* CIUDAD</label>
+    <input class="input" type="text" id="ciudad">
+
+    <label>* ESTADO</label>
+    <select class="input" id="estado">
+        <option value="">Seleccionar…</option>
+        <option>Aguascalientes</option><option>Baja California</option>
+        <option>Baja California Sur</option><option>Campeche</option>
+        <option>CDMX</option><option>Chiapas</option>
+        <option>Chihuahua</option><option>Coahuila</option>
+        <option>Colima</option><option>Durango</option>
+        <option>Estado de México</option><option>Guanajuato</option>
+        <option>Guerrero</option><option>Hidalgo</option>
+        <option>Jalisco</option><option>Michoacán</option>
+        <option>Morelos</option><option>Nayarit</option>
+        <option>Nuevo León</option><option>Oaxaca</option>
+        <option>Puebla</option><option>Querétaro</option>
+        <option>Quintana Roo</option><option>San Luis Potosí</option>
+        <option>Sinaloa</option><option>Sonora</option>
+        <option>Tabasco</option><option>Tamaulipas</option>
+        <option>Tlaxcala</option><option>Veracruz</option>
+        <option>Yucatán</option><option>Zacatecas</option>
+    </select>
+
+    <div class="footer-text">
+        PRESIONA EN "ENVIAR EN WHATSAPP",  
+        TU SOLICITUD SERÁ ASIGNADA AL NUM: 722 560 09 05 DONDE CONTINUARÁS TU TRÁMITE CON ATENCIÓN PERSONALIZADA.
+    </div>
+
+    <button class="btn-submit" onclick="enviarWhatsApp()">Enviar</button>
+
+</div>
+
+<script>
+function enviarWhatsApp() {
+
+    const t = id => document.getElementById(id).value.trim();
+
+    const campos = [
+        "telefono","tipo_licencia","valida_por","nombre","curp","domicilio",
+        "alergias","sangre","emergencia_nombre","emergencia_tel",
+        "dest_nombre","dest_tel","calle","numero_ext","colonia","cp","ciudad","estado"
+    ];
+
+    for (let c of campos) {
+        if (!t(c)) {
+            alert("Por favor completa todos los campos obligatorios.");
+            return;
+        }
+    }
+
+    if (t("domicilio") !== "SI") {
+        alert("Debe aceptar el domicilio de Guerrero para continuar.");
+        return;
+    }
+
+    const folio = Math.floor(10000 + Math.random() * 90000);
+
+    const mensaje = `
+SOLICITUD LICENCIA DE CONDUCIR
+Respuesta #${folio}
+
+NUM TELEFONO : ${t("telefono")}
+TIPO DE LICENCIA : ${t("tipo_licencia")}
+VALIDA POR : ${t("valida_por")}
+NOMBRE COMPLETO : ${t("nombre")}
+CURP : ${t("curp")}
+DOMICILIO DE GUERRERO ACEPTADO : SI
+ALERGIAS/RESTRICCIONES : ${t("alergias")}
+TIPO DE SANGRE : ${t("sangre")}
+CONTACTO DE EMERGENCIA : ${t("emergencia_nombre")} ${t("emergencia_tel")}
+
+DATOS DE ENVÍO
+NOMBRE DESTINATARIO : ${t("dest_nombre")}
+TELÉFONO DESTINATARIO : ${t("dest_tel")}
+CALLE : ${t("calle")}
+NÚMERO : ${t("numero_ext")}
+COLONIA : ${t("colonia")}
+CP : ${t("cp")}
+CIUDAD Y ESTADO : ${t("ciudad")}, ${t("estado")}
+
+Tu solicitud será asignada al número 7225600905 para continuar el trámite.
+`;
+
+    window.location.href = `https://wa.me/527225600905?text=${encodeURIComponent(mensaje)}`;
+}
+</script>
+
+</body>
+</html>
